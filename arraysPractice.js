@@ -89,6 +89,7 @@ var odds = []
 //Write a function called divider that is given three arguments, nums, evens, and odds.
 //Have divider return an Array with the first item in the array being the evens array (all the even values from nums) and the second item in the Array being the odds array(all the odd values from nums).
 var divider = function(arr){
+  var newNums = [];
   for (var i = 0; i < arr.length; i++){
     if (arr[i] % 2 !== 0){
       odds.push(arr[i]);
@@ -97,6 +98,9 @@ var divider = function(arr){
     
     }
   }
+  newNums.push(evens);
+  newNums.push(odds);
+  return newNums;
 }
 
 
@@ -113,14 +117,15 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
   //Code Here
 var finder = function(arr){
   var theNum = getRandomArbitrary();
-  
+  var flag = false;
   for(var i = 0; i < arr.length; i++){
+    
     if ([i] === theNum){
-      return true}
-    else{ return false}
+      var flag = true;
+    }
+    return flag;
   }
 }
-  
 
 
 //Next problem
@@ -241,7 +246,7 @@ for(var i = 0; i < num2; i++){
 
   //Code Here
 var longest = function(arr1, arr2){
-  if(arr1 < arr2){
+  if(arr1.length < arr2.length){
     return arr2;}
   else { return arr1;
        }
@@ -256,7 +261,7 @@ var longest = function(arr1, arr2){
   //Code Here
 var both = function(arr1, arr2){
   var arr3 = [];
-  if (arr1< arr2){
+  if (arr1.length< arr2.length){
     arr3 = arr1.slice();
   }
   else {
